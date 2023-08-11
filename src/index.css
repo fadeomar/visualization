@@ -12,4 +12,8 @@ code {
     monospace;
 }
 
-/*  */
+svg {
+  border: 1px solid red;
+  background: gray;
+  overflow: visible;
+}
