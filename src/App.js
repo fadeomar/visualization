@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React from "react";
+import FamilyTree from "./components/FamilyTree";
+import "./App.css";
+
+const App = () => {
+  // Dummy family tree data
+  const familyData = {
+    name: "John Doe",
+    gender: "male",
+    children: [
+      {
+        name: "Jane Doe",
+        gender: "female",
+        children: [
+          {
+            name: "Alice Doe",
+            gender: "female",
+            children: [],
+          },
+          {
+            name: "Bob Doe",
+            gender: "male",
+            children: [],
+          },
+        ],
+      },
+      {
+        name: "Mark Doe",
+        gender: "male",
+        children: [
+          {
+            name: "Sara Doe",
+            gender: "female",
+            children: [],
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Family Tree Visualization</h1>
+      <FamilyTree data={familyData} />
     </div>
   );
-}
+};
 
 export default App;
